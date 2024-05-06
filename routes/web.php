@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
 
@@ -38,6 +39,7 @@ Route::middleware('auth')->group(function() {
     Route::resource('/tour', TourController::class);
     Route::resource('/slider', SliderController::class);
     Route::resource('/article', ArticleController::class);
+    Route::resource('/car', CarController::class);
 });
 
 Route::get('/', [HomeController::class, 'index']);

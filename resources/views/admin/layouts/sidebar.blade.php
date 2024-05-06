@@ -41,6 +41,13 @@
             </li>
 
             <li class="sidebar-item ">
+                <a href="{{ url('/car') }}" class='sidebar-link'>
+                    <i data-feather="home" width="20"></i>
+                    <span>Car Rental</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item ">
                 <a href="{{ url('/article') }}" class='sidebar-link'>
                     <i data-feather="home" width="20"></i>
                     <span>Article</span>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Car;
 use App\Models\Tour;
 use App\Models\Slider;
 use App\Models\Article;
@@ -25,8 +26,9 @@ class HomeController extends Controller
             ->groupBy('locations.name', 'categories.id', 'categories.name')
             ->get();
         $tour      = Tour::latest()->get();
+        $car       = Car::latest()->get();
         $article = Article::orderBy('view', 'desc')->take(10)->get();
-        return view('front.home', compact('slider', 'location', 'tour', 'article'));
+        return view('front.home', compact('slider', 'location', 'tour', 'article', 'car'));
     }
 
     // menampilkan data paket wisata
