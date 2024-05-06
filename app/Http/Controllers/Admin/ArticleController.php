@@ -40,7 +40,7 @@ class ArticleController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'desc'  => 'required',
-            'img'   => 'required|mimes:png,jpg|max:2048',
+            'img'   => 'required|image|file|mimes:png,jpg,jpeg,webp|max:2024',
 
         ]);
 
@@ -74,6 +74,8 @@ class ArticleController extends Controller
     public function edit(string $id)
     {
         //
+        $data = Article::find($id);
+        return view('admin.article.edit', compact('data'));
     }
 
     /**
@@ -86,7 +88,7 @@ class ArticleController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'desc'  => 'required',
-            'img'   => 'required|mimes:jpeg,png,jpg|max:2048',
+            'img'   => 'nullable|mimes:jpeg,png,jpg|max:2048',
 
 
         ]);
@@ -109,9 +111,7 @@ class ArticleController extends Controller
 
        return redirect(url('article'))->with('success', 'data has been update');
 
-       
     
-
         
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Front\HomeController;
@@ -23,14 +24,25 @@ use App\Http\Controllers\Admin\LocationController;
 //     return view('welcome');
 // });
 
-Route::get('/dashboard', function() {
-    return view('admin.dashboard');
+
+
+
+
+Route::middleware('auth')->group(function() {
+
+    Route::get('/dashboard', function() {
+        return view('admin.dashboard');
+    });
+    Route::resource('/location', LocationController::class);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/tour', TourController::class);
+    Route::resource('/slider', SliderController::class);
+    Route::resource('/article', ArticleController::class);
 });
 
-
 Route::get('/', [HomeController::class, 'index']);
-Route::resource('/location', LocationController::class);
-Route::resource('/category', CategoryController::class);
-Route::resource('/tour', TourController::class);
-Route::resource('/slider', SliderController::class);
-Route::resource('/article', ArticleController::class);
+Route::get('wisata/{slug}', [HomeController::class, 'category']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

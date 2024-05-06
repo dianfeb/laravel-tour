@@ -55,21 +55,24 @@
 																<div class="form-group hdd-arrow mb-0">
 																	<select class="goingto form-control fw-bold hdd-arrow">
 																		<option value="">Select</option>
-																		<option value="ny">New York</option>
-																		<option value="sd">San Diego</option>
-																		<option value="sj">San Jose</option>
-																		<option value="ph">Philadelphia</option>
-																		<option value="nl">Nashville</option>
-																		<option value="sf">San Francisco</option>
-																		<option value="hu">Houston</option>
-																		<option value="sa">San Antonio</option>
+																		@foreach ($location as $row)
+																		<option value="{{ $row->location_name}}">{{ $row->location_name }}</option>
+																	@endforeach
+																		
 																	</select>
 																</div>
 															</div>
 															<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
 																<div class="form-group mb-0">
-																	<input type="text" class="form-control fw-bold" placeholder="Check-In & Check-Out"
-																		id="checkinout" readonly="readonly">
+															
+																	<div class="form-group hdd-arrow mb-0">
+																		<select class="wisata form-control fw-bold hdd-arrow">
+																			<option value="">Select</option>
+																			@foreach ($location as $row)
+																				<option value="{{ $row->category_name }}">{{ $row->category_name }}</option>
+																			@endforeach
+																		</select>
+																	</div>
 																</div>
 															</div>
 														</div>
@@ -124,7 +127,7 @@
 									<div class="touritem-flexxer">
 										<div class="explot">
 											<h4 class="city fs-6 m-0 fw-bold">
-												<span>{{ $item->name }}</span>
+												<span>{{ $item->location_name }}</span>
 											</h4>
 											<div class="rates">
 												<div class="rat-reviews">
@@ -262,16 +265,18 @@
 
 				<div class="row justify-content-center g-4">
 
+					@foreach ($article as $item)
+						
+					@endforeach
 					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
 						<div class="blogGrid-wrap d-flex flex-column h-100">
 							<div class="blogGrid-pics">
-								<a href="#" class="d-block"><img src="assets/img/blog-1.jpg" class="img-fluid rounded" alt="Blog image"></a>
+								<a href="#" class="d-block"><img src="{{ asset('storage/images/article/' .$item->img) }}" class="img-fluid rounded" alt="Blog image"></a>
 							</div>
 							<div class="blogGrid-caps pt-3">
 								<div class="d-flex align-items-center mb-1"><span
-										class="label text-success bg-light-success">Destination</span></div>
-								<h4 class="fw-bold fs-6 lh-base"><a href="#" class="text-dark">Make Your Next Journey Delhi To Paris in
-										Comfirtable And Best Price</a></h4>
+										class="label text-success bg-light-success">{{ $item->view }} Dilihat</span></div>
+								<h4 class="fw-bold fs-6 lh-base"><a href="#" class="text-dark">{{ $item->title }}</a></h4>
 								<p class="mb-3">Think of a news blog that's filled with content hourly on the Besides, random text risks
 									to be unintendedly humorous or offensive day of going live.</p>
 								<a class="text-primary fw-medium" href="#">Read More<i class="fa-solid fa-arrow-trend-up ms-2"></i></a>
@@ -279,89 +284,12 @@
 						</div>
 					</div>
 
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-						<div class="blogGrid-wrap d-flex flex-column h-100">
-							<div class="blogGrid-pics">
-								<a href="#" class="d-block"><img src="assets/img/blog-2.jpg" class="img-fluid rounded" alt="Blog image"></a>
-							</div>
-							<div class="blogGrid-caps pt-3">
-								<div class="d-flex align-items-center mb-1"><span
-										class="label text-success bg-light-success">Journey</span></div>
-								<h4 class="fw-bold fs-6 lh-base"><a href="#" class="text-dark">Make Your Next Journey Delhi To Paris in
-										Comfirtable And Best Price</a></h4>
-								<p class="mb-3">Think of a news blog that's filled with content hourly on the Besides, random text risks
-									to be unintendedly humorous or offensive day of going live.</p>
-								<a class="text-primary fw-medium" href="#">Read More<i class="fa-solid fa-arrow-trend-up ms-2"></i></a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-						<div class="blogGrid-wrap d-flex flex-column h-100">
-							<div class="blogGrid-pics">
-								<a href="#" class="d-block"><img src="assets/img/blog-3.jpg" class="img-fluid rounded" alt="Blog image"></a>
-							</div>
-							<div class="blogGrid-caps pt-3">
-								<div class="d-flex align-items-center mb-1"><span
-										class="label text-success bg-light-success">Business</span></div>
-								<h4 class="fw-bold fs-6 lh-base"><a href="#" class="text-dark">Make Your Next Journey Delhi To Paris in
-										Comfirtable And Best Price</a></h4>
-								<p class="mb-3">Think of a news blog that's filled with content hourly on the Besides, random text risks
-									to be unintendedly humorous or offensive day of going live.</p>
-								<a class="text-primary fw-medium" href="#">Read More<i class="fa-solid fa-arrow-trend-up ms-2"></i></a>
-							</div>
-						</div>
-					</div>
+					
 
 				</div>
 			</div>
 		</section>
 		<!-- ================================ Article Section Start ======================================= -->
 
-
-		<!-- ============================ Call To Action Start ================================== -->
-		<div class="position-relative bg-cover py-5 bg-primary" style="background:url(assets/img/bg.jpg)no-repeat;"
-			data-overlay="5">
-			<div class="container">
-				<div class="row align-items-center justify-content-between">
-					<div class="col-xl-12 col-lg-12 col-md-12">
-						<div class="calltoAction-wraps position-relative py-5 px-4">
-							<div class="ht-40"></div>
-							<div class="row align-items-center justify-content-center">
-								<div class="col-xl-8 col-lg-9 col-md-10 col-sm-11 text-center">
-
-									<div class="calltoAction-title mb-5">
-										<h4 class="text-light fs-2 fw-bold lh-base m-0">Subscribe & Get<br>Special Discount with GeoTrip.com
-										</h4>
-									</div>
-									<div class="newsletter-forms mt-md-0 mt-4">
-										<form>
-											<div class="row align-items-center justify-content-between bg-white rounded-3 p-2 gx-0">
-
-												<div class="col-xl-9 col-lg-8 col-md-8">
-													<div class="form-group m-0">
-														<input type="text" class="form-control bold ps-1 border-0" placeholder="Enter Your Mail!">
-													</div>
-												</div>
-												<div class="col-xl-3 col-lg-4 col-md-4">
-													<div class="form-group m-0">
-														<button type="button" class="btn btn-dark fw-medium full-width">Submit<i
-																class="fa-solid fa-arrow-trend-up ms-2"></i></button>
-													</div>
-												</div>
-
-											</div>
-										</form>
-									</div>
-
-								</div>
-							</div>
-							<div class="ht-40"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ============================ Call To Action Start ================================== -->
-
+  
         @endsection

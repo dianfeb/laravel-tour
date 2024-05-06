@@ -223,7 +223,11 @@
 	});
 
 	$(".goingto").select2({
-		placeholder: "Going To"
+		placeholder: "Lokasi"
+	});
+
+	$(".wisata").select2({
+		placeholder: "Wisata"
 	});
 	
 	$(".occupant").select2({

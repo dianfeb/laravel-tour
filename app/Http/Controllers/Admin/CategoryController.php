@@ -16,8 +16,8 @@ class CategoryController extends Controller
     {
         //
 
-        $category = Category::latest()->get();
-        return view('admin.category.index', compact('category'));
+        $data = Category::latest()->get();
+        return view('admin.category.index', compact('data'));
     }
 
     /**

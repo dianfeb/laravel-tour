@@ -56,7 +56,7 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($category as $row)
+                            @foreach ($data as $row)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $row->name }}</td>

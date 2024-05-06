@@ -7,14 +7,7 @@
                 <div class="nav-toggle"></div>
                 <div class="mobile_nav">
                     <ul>
-                        <li class="currencyDropdown me-2">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#currencyModal"><span
-                                    class="fw-medium">INR</span></a>
-                        </li>
-                        <li class="languageDropdown me-2">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#countryModal"><img
-                                    src="assets/img/flag/flag.png" class="img-fluid" width="17" alt="Country"></a>
-                        </li>
+                        
                         <li>
                             <a href="#" class="bg-light-primary text-primary rounded" data-bs-toggle="modal"
                                 data-bs-target="#login"><i class="fa-regular fa-circle-user fs-6"></i></a>
@@ -32,7 +25,7 @@
                         <ul class="nav-dropdown nav-submenu">
                             
                             @foreach ($categories as $item)
-                            <li><a href="{{ url('category/'. $item->slug) }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ url('wisata/'. $item->category_slug) }}">{{ $item->category_name }}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -47,17 +40,11 @@
                 </ul>
 
                 <ul class="nav-menu nav-menu-social align-to-right">
-                    <li class="currencyDropdown me-2">
-                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#currencyModal"><span
-                                class="fw-medium">INR</span></a>
-                    </li>
-                    <li class="languageDropdown me-2">
-                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#countryModal"><img
-                                src="assets/img/flag/flag.png" class="img-fluid" width="17" alt="Country"></a>
-                    </li>
+                   
+                   
                     <li class="list-buttons light">
                         <a href="#" data-bs-toggle="modal" data-bs-target="#login"><i
-                                class="fa-regular fa-circle-user fs-6 me-2"></i>Sign In / Register</a>
+                                class="fa-regular fab fa-whatsapp fs-6 me-2"></i>087796451992</a>
                     </li>
                 </ul>
             </div>
