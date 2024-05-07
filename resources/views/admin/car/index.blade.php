@@ -53,6 +53,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
+                                <th>Harga</th>
+                                <th>Durasi</th>
+                                <th>Image</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -62,6 +65,11 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->name }}</td>
+                                <td>{{ $row->price }}</td>
+                                <td>{{ $row->duration }}</td>
+                                <td><img src="{{ asset('storage/images/car/' . $row->img) }}"
+                                    style="width:150px">
+                                </td>
                                 <td>
                                     <a href="{{ url('car/'.$row->id.'/edit') }}" class="btn btn-outline-warning">
                                         <i class="badge-circle badge-circle-white text-secondary font-medium-1"
@@ -120,7 +128,7 @@
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'DELETE',
-                url: '/tour/' + id,
+                url: '/car/' + id,
                 dataType: "json",
                 success: function(response) {
                   Swal.fire({
@@ -128,7 +136,7 @@
                     text: response.message,
                     icon: 'success',
                   }).then((result) => {
-                    window.tour.href = '/tour';
+                    window.location.href = '/car';
                   })
                 },
                 error: function(xhr, ajaxOptions, thrownError) {

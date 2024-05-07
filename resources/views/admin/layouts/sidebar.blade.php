@@ -1,6 +1,6 @@
 <div class="sidebar-wrapper active">
     <div class="sidebar-header">
-        <img src="{{ asset('admin/images/logo.svg') }}" alt="" srcset="">
+        <img src="{{ asset('storage/images/config/' . $config['Logo']) }}" alt="" srcset="">
     </div>
     <div class="sidebar-menu">
         <ul class="menu">
@@ -48,6 +48,13 @@
             </li>
 
             <li class="sidebar-item ">
+                <a href="{{ url('/testimonial') }}" class='sidebar-link'>
+                    <i data-feather="home" width="20"></i>
+                    <span>Testimonial</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item ">
                 <a href="{{ url('/article') }}" class='sidebar-link'>
                     <i data-feather="home" width="20"></i>
                     <span>Article</span>
@@ -55,14 +62,20 @@
             </li>
 
             <li class="sidebar-title">Pages</li>
-            {{-- <li class="sidebar-item ">
+            <li class="sidebar-item ">
+                <a href="{{ url('/config') }}" class='sidebar-link'>
+                    <i data-feather="home" width="20"></i>
+                    <span>Config</span>
+                </a>
+            </li>
+            <li class="sidebar-item ">
                 
                 <form id="logout-form" action="" method="POST" class="d-none">
                     @csrf
                 </form>
                 <a class="sidebar-link" href="" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"><i data-feather="log-out"></i> Logout</a>
-            </li> --}}
+            </li>
             
         </ul>
     </div>

@@ -8,6 +8,7 @@ use App\Models\Slider;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Location;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -27,8 +28,9 @@ class HomeController extends Controller
             ->get();
         $tour      = Tour::latest()->get();
         $car       = Car::latest()->get();
+        $testimonial = Testimonial::latest()->get();
         $article = Article::orderBy('view', 'desc')->take(10)->get();
-        return view('front.home', compact('slider', 'location', 'tour', 'article', 'car'));
+        return view('front.home', compact('slider', 'location', 'tour', 'article', 'car', 'testimonial'));
     }
 
     // menampilkan data paket wisata

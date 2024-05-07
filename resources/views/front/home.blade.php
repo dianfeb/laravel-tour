@@ -224,7 +224,7 @@
                                       
 										<div class="card-facilities"> 
 											<div class="item-facilities"> 
-											  <p class="speed text-md-medium">{{ $item->duration }}</p>
+											  <p class="time text-md-medium">{{ $item->duration }}</p>
 											</div>
 											
 											<div class="item-facilities"> 
@@ -450,7 +450,7 @@
     </section>
     <section class="section-box box-banner-ads background-body">
         <div class="container">
-            <div class="text-center wow fadeInUp"> <img src="assets/imgs/page/homepage7/banner-ads.png" alt="Travila">
+            <div class="text-center wow fadeInUp"> <img src="{{ asset('storage/images/config/' . $config['adv']) }}" alt="Travila">
             </div>
         </div>
     </section>
@@ -460,9 +460,9 @@
         <div class="container">
             <div class="text-center wow fadeInUp">
                 <div class="d-flex justify-content-center">
-                    <div class="box-author-testimonials"> <img src="assets/imgs/page/homepage1/testimonial.png"
-                            alt="Travila"><img src="assets/imgs/page/homepage1/testimonial2.png" alt="Travila"><img
-                            src="assets/imgs/page/homepage1/testimonial3.png" alt="Travila">Testimonials</div>
+                    <div class="box-author-testimonials">
+                         <img src="{{ asset('assets/img/favicon.png') }}"
+                            alt="Travila">Testimonials</div>
                 </div>
                 <h2 class="mt-8 mb-35 neutral-1000">Don't take our word for it</h2>
             </div>
@@ -474,118 +474,39 @@
                     <div class="box-swiper box-swiper-home7">
                         <div class="swiper-container swiper-group-testimonials-1 swiper-group-journey pb-0">
                             <div class="swiper-wrapper">
+                                @foreach ($testimonial as $item)
+                                    
+                                @endforeach
                                 <div class="swiper-slide">
                                     <div class="card-testimonial background-card">
                                         <div class="card-info">
-                                            <p class="text-xl-bold card-title neutral-1000">The best booking system</p>
-                                            <p class="neutral-500">I've been using the hotel booking system for several
-                                                years now, and it's become my go-to platform for planning my trips. The
-                                                interface is user-friendly, and I appreciate the detailed information and
-                                                real-time availability of hotels.</p>
+                                            <p class="text-xl-bold card-title neutral-1000">{!! $item->desc !!}</p>
                                         </div>
                                         <div class="card-top">
                                             <div class="card-author">
                                                 <div class="card-image"> <img
-                                                        src="assets/imgs/page/homepage1/author.png" alt="Travila">
+                                                        src="{{ asset('storage/images/testimonial/'. $item->img) }}" alt="Travila">
                                                 </div>
                                                 <div class="card-info">
-                                                    <p class="text-lg-bold neutral-1000">Sara Mohamed</p>
-                                                    <p class="text-sm neutral-1000">Jakatar</p>
+                                                    <p class="text-lg-bold neutral-1000">{{ $item->name }}</p>
+                                                    <p class="text-sm neutral-1000">{{ $item->city }}</p>
                                                 </div>
                                             </div>
-                                            <div class="card-rate"> <img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"></div>
+                                            <div class="card-rate"> 
+                                                <?php
+                                                // Angka yang ingin diubah menjadi bintang
+                                                $star = $item->rating;
+                                                
+                                                // Loop untuk menampilkan bintang sebanyak angka yang diberikan
+                                                for ($i = 0; $i < $star; $i++) {
+                                                    echo '<i class="fa fa-star"></i>'; // Menggunakan class dari Font Awesome untuk menampilkan bintang
+                                                }
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="card-testimonial background-card">
-                                        <div class="card-info">
-                                            <p class="text-xl-bold card-title neutral-1000">The best booking system</p>
-                                            <p class="neutral-500">I've been using the hotel booking system for several
-                                                years now, and it's become my go-to platform for planning my trips. The
-                                                interface is user-friendly, and I appreciate the detailed information and
-                                                real-time availability of hotels.</p>
-                                        </div>
-                                        <div class="card-top">
-                                            <div class="card-author">
-                                                <div class="card-image"> <img
-                                                        src="assets/imgs/page/homepage1/author2.png" alt="Travila">
-                                                </div>
-                                                <div class="card-info">
-                                                    <p class="text-lg-bold neutral-1000">Atend John</p>
-                                                    <p class="text-sm neutral-1000">Califonia</p>
-                                                </div>
-                                            </div>
-                                            <div class="card-rate"> <img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-testimonial background-card">
-                                        <div class="card-info">
-                                            <p class="text-xl-bold card-title neutral-1000">The best booking system</p>
-                                            <p class="neutral-500">I've been using the hotel booking system for several
-                                                years now, and it's become my go-to platform for planning my trips. The
-                                                interface is user-friendly, and I appreciate the detailed information and
-                                                real-time availability of hotels.</p>
-                                        </div>
-                                        <div class="card-top">
-                                            <div class="card-author">
-                                                <div class="card-image"> <img
-                                                        src="assets/imgs/page/homepage1/author.png" alt="Travila">
-                                                </div>
-                                                <div class="card-info">
-                                                    <p class="text-lg-bold neutral-1000">Sara Mohamed</p>
-                                                    <p class="text-sm neutral-1000">Jakatar</p>
-                                                </div>
-                                            </div>
-                                            <div class="card-rate"> <img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="card-testimonial background-card">
-                                        <div class="card-info">
-                                            <p class="text-xl-bold card-title neutral-1000">The best booking system</p>
-                                            <p class="neutral-500">I've been using the hotel booking system for several
-                                                years now, and it's become my go-to platform for planning my trips. The
-                                                interface is user-friendly, and I appreciate the detailed information and
-                                                real-time availability of hotels.</p>
-                                        </div>
-                                        <div class="card-top">
-                                            <div class="card-author">
-                                                <div class="card-image"> <img
-                                                        src="assets/imgs/page/homepage1/author2.png" alt="Travila">
-                                                </div>
-                                                <div class="card-info">
-                                                    <p class="text-lg-bold neutral-1000">Sara Mohamed</p>
-                                                    <p class="text-sm neutral-1000">Jakatar</p>
-                                                </div>
-                                            </div>
-                                            <div class="card-rate"> <img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"><img src="assets/imgs/template/icons/star.svg"
-                                                    alt="Travila"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-group-1">

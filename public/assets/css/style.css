@@ -1472,7 +1472,7 @@ h6, .heading-6 {
   height: 10px;
   width: 14px;
   background-color: transparent;
-  background-image: url(../imgs/page/homepage2/dropdown.svg);
+  background-image: url(../img/dropdown.svg);
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
@@ -1661,7 +1661,7 @@ body {
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
-  background: var(--bs-neutral-200) url(../imgs/template/icons/arrow-down.svg) no-repeat right 15px center;
+  background: var(--bs-neutral-200) url(../img/arrow-down.svg) no-repeat right 15px center;
 }
 .btn.btn-dropdown:after {
   display: none;
@@ -1905,7 +1905,7 @@ body {
   height: 10px;
   width: 14px;
   background-color: transparent;
-  background-image: url(../imgs/page/homepage2/dropdown.svg);
+  background-image: url(../img/dropdown.svg);
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
@@ -2839,8 +2839,8 @@ label {
   padding: 0px 0px 0px 30px;
   margin-bottom: 13px;
 }
-.card-journey-small .card-info .card-facilities .item-facilities p.speed {
-  background-image: url(../imgs/page/homepage8/speed.svg);
+.card-journey-small .card-info .card-facilities .item-facilities p.time {
+  background-image: url(../img/time.svg);
 }
 .card-journey-small .card-info .card-facilities .item-facilities p.gear {
   background-image: url(../imgs/page/homepage8/engineering.svg);
@@ -2849,7 +2849,7 @@ label {
   background-image: url(../imgs/page/homepage8/fuel.svg);
 }
 .card-journey-small .card-info .card-facilities .item-facilities p.seats {
-  background-image: url(../imgs/page/homepage8/seat.svg);
+  background-image: url(../img/seat.svg);
 }
 .card-journey-small .card-info .card-facilities .item-facilities p.room {
   background-image: url(../imgs/page/homepage9/room.svg);
@@ -3541,7 +3541,7 @@ label {
   border-radius: 50%;
   display: block;
 }
-.card-testimonial .card-top .card-rate img {
+.card-testimonial .card-top .card-rate i {
   margin-left: 2px;
 }
 
@@ -4236,7 +4236,7 @@ label {
   width: 100%;
   text-align: center;
 }
-/* .header .main-header .header-right {
+.header .main-header .header-right {
   width: 30%;
   min-width: 405px;
   text-align: right;
@@ -4244,12 +4244,12 @@ label {
   align-items: center;
   position: relative;
   justify-content: flex-end;
-} */
+}
 .header .nav-main-menu {
   display: flex;
   padding: 0px;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   text-align: left;
 }
 .header .main-menu li {
@@ -4261,7 +4261,7 @@ label {
   content: "";
   height: 10px;
   width: 10px;
-  background: url(../imgs/template/icons/arrow-down.svg) no-repeat center;
+  background: url(../img/arrow-down.svg) no-repeat center;
   opacity: 1;
   margin-left: 0px;
   position: absolute;
@@ -4270,7 +4270,7 @@ label {
   opacity: 0.6;
 }
 .header .main-menu li.has-children > a:hover::after {
-  background: url(../imgs/template/icons/arrow-down.svg) no-repeat center;
+  background: url(../img/arrow-down.svg) no-repeat center;
 }
 .header .main-menu li.hr {
   padding: 0px 22px;
@@ -7723,7 +7723,7 @@ a.icon-socials:hover svg {
 }
 
 .need-some-help {
-  background: url(../imgs/page/homepage2/user.svg) no-repeat left center;
+  background: url(../img/user.svg) no-repeat left center;
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -7734,7 +7734,7 @@ a.icon-socials:hover svg {
 
 .location-search {
   padding-left: 22px !important;
-  background: url(../imgs/page/homepage2/location.svg) no-repeat left center;
+  background: url(../img/location.svg) no-repeat left center;
 }
 
 .calendar-search {
@@ -7744,7 +7744,7 @@ a.icon-socials:hover svg {
 
 .passenger-search {
   padding-left: 22px !important;
-  background: url(../imgs/page/homepage2/user.svg) no-repeat left center;
+  background: url(../img/user.svg) no-repeat left center;
 }
 
 .box-payment-style-2 {
@@ -7801,7 +7801,7 @@ a.icon-socials:hover svg {
 .box-testimonials-2 {
   position: relative;
   padding: 112px 0px 118px 0px;
-  background: url(../imgs/page/homepage2/bg-testimonials.png) no-repeat top 100px right 40px;
+  background: url(../img/bg-testimonial.png) no-repeat top 100px right 40px;
   border-bottom: 1px solid var(--bs-border-color);
 }
 .box-testimonials-2 .container-slider {
@@ -8728,7 +8728,7 @@ a.icon-socials:hover svg {
 }
 
 .box-testimonials-4 {
-  background-image: url(../imgs/page/homepage7/bg-testimonial.png);
+  background-image: url(../img/bg-testimonial.png);
   background-position: bottom 20px left 17%;
   border-bottom: 0px;
   padding-bottom: 0px;
@@ -9660,7 +9660,7 @@ h1 span {
   line-height: 18px;
   font-weight: 500;
   color: var(--bs-neutral-1000);
-  background-image: url(../imgs/template/icons/dropdown.svg);
+  background-image: url(../img/dropdown.svg);
   background-position: right 1px center;
   padding-right: 19px;
   background-repeat: no-repeat;
@@ -10629,7 +10629,7 @@ h1 span {
   background-image: url(../imgs/page/homepage8/fuel.svg);
 }
 .card-property.card-flight.card-tour .card-facilities .item-facilities p.seats {
-  background-image: url(../imgs/page/homepage8/seat.svg);
+  background-image: url(../img/seat.svg);
 }
 .card-property.card-flight.card-tour .card-facilities .item-facilities p.room {
   background-image: url(../imgs/page/homepage9/room.svg);
@@ -13165,6 +13165,8 @@ h2 span {
   .sticky-bar.stick .burger-icon {
     top: 0px;
   }
+
+  
   .card-journey-small {
     max-width: 100%;
   }
@@ -13593,11 +13595,11 @@ h2 span {
   }
 }
 /*OTHER SCREEN*/
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
+/* @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .header-right {
     display: none;
   }
-}
+} */
 @media screen and (min-width: 1400px) and (max-width: 1610px) {
   .header-{
     max-width: 100%;

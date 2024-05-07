@@ -71,7 +71,7 @@ class CarController extends Controller
         //
 
         $data = Car::find($id);
-        return view('admin.car.index', compact('data'));
+        return view('admin.car.edit', compact('data'));
     }
 
     /**

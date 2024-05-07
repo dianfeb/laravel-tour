@@ -31,12 +31,11 @@
         <div class="main-header">
             <div class="header-left">
                 <div class="header-logo"><a class='d-flex' href='/'><img class="light-mode" alt="Travila"
-                            src="assets/imgs/template/logo.svg"><img class="dark-mode" alt="Travila"
-                            src="assets/imgs/template/logo-w.svg"></a></div>
+                            src="{{ asset('storage/images/config/' . $config['Logo']) }}"></a></div>
                 <div class="header-nav">
                     <nav class="nav-main-menu">
                         <ul class="main-menu">
-                            <li class="has-children"><a class='active' href='/'>Home</a>
+                            <li><a class='active' href='/'>Home</a>
                             </li>
 
                             <li><a href='/contact'>Tentang Kami</a></li>
@@ -74,10 +73,10 @@
                 </div>
             </div>
             <div class="header-right">
-
-                <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span
-                        class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
-            </div>
+                
+                <div class="burger-icon-2 burger-icon-white burger-2-close"><img src="{{ asset('assets/img/menu.svg') }}" alt="Travila"></div>
+                <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
+              </div>
         </div>
     </div>
 </header>

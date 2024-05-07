@@ -72,8 +72,8 @@ class SliderController extends Controller
 
         $data = $request->validate([
             'name' => 'required',
-            'img'  => 'required|image|file|mimes:jpg,jpeg,png,webp|max:2048',
-            'desc' => 'nullable'
+            'img'  => 'nullable|image|file|mimes:jpg,jpeg,png,webp|max:2048',
+            'desc' => 'required'
         ]);
 
         if ($request->file('img')) {
@@ -91,7 +91,7 @@ class SliderController extends Controller
 
         Slider::find($id)->update($data);
 
-        return redirect(url('tour'))->with('success', 'data has been updated');
+        return redirect(url('slider'))->with('success', 'data has been updated');
     }
 
     /**

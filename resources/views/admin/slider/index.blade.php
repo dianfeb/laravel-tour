@@ -49,6 +49,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
+                                <th>Image</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -58,6 +59,9 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $row->name }}</td>
+                                    <td><img src="{{ asset('storage/images/slider/' . $row->img) }}"
+                                        style="width:150px">
+                                    </td>
                                     <td>
                                         <a href="{{ url('slider/'.$row->id.'/edit') }}" class="btn btn-outline-warning">
                                             <i class="badge-circle badge-circle-white text-secondary font-medium-1"

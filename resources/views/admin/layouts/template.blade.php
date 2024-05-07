@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{{ asset('admin/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/app.css') }}">
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png') }}" type="image/x-icon">
     @stack('css')
 </head>
 
@@ -63,7 +63,7 @@
                 </div>
                 <div class="float-end">
                     <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
-                            href="https://saugi.me">Saugi</a></p>
+                            href="https://saugi.me">{{ $config['Title'] }}</a></p>
                 </div>
             </div>
         </footer>

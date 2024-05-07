@@ -28,7 +28,7 @@
     
                 <div class="card-content">
                 <div class="card-body">
-                    <form class="form form-vertical" action="{{ url('slider/'.$data->id) }}" method="post" enctype="multipart/form-data">
+                    <form class="form form-vertical" action="{{ url('testimonial/'.$data->id) }}" method="post" enctype="multipart/form-data">
                         @method('PUT')
                         @csrf
                         <input type="hidden" name="oldImg" value="{{$data->img}}">
@@ -42,12 +42,26 @@
                             <input type="text" id="name-id-vertical" class="form-control" name="name" value="{{ old('name', $data->name)  }}">
                             </div>
                         </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                            <label for="harga-id-vertical">Rating</label>
+                            <input type="text" id="name-id-vertical" class="form-control" name="rating" value="{{ old('rating', $data->rating)  }}">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                            <label for="harga-id-vertical">Kota</label>
+                            <input type="text" id="name-id-vertical" class="form-control" name="city" value="{{ old('city', $data->city)  }}">
+                            </div>
+                        </div>
                         
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>File upload (Max 2Mb)</label>
                                 <div class="form-file">
-                                    <img src="{{asset('storage/images/slider/'.$data->img)}}" alt="" width="100px"><br>
+                                    <img src="{{asset('storage/images/testimonial/'.$data->img)}}" alt="" width="100px"><br>
                                         <small>Gambar Lama </small><br>
                                     <input type="file" name="img" class="form-control form-file-input"
                                         id="customFile" >

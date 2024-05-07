@@ -2,13 +2,15 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\TourController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\admin\ConfigController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ArticleController;
-use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\Admin\LocationController;
+use App\Http\Controllers\Admin\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,8 @@ Route::middleware('auth')->group(function() {
     Route::resource('/slider', SliderController::class);
     Route::resource('/article', ArticleController::class);
     Route::resource('/car', CarController::class);
+    Route::resource('/config', ConfigController::class);
+    Route::resource('/testimonial', TestimonialController::class);
 });
 
 Route::get('/', [HomeController::class, 'index']);

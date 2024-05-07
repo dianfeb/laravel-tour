@@ -1,5 +1,5 @@
 @extends('admin.layouts.template')
-@section('title', 'Paket Wisata')
+@section('title', 'Testimonial')
 @push('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 @endpush
@@ -9,14 +9,14 @@
     <div class="page-title">
         <div class="row mb-4">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Paket Wisata</h3>
+                <h3>Testimonial</h3>
 
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
                 <nav aria-label="breadcrumb" class='breadcrumb-header'>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Paket Wisata</li>
+                        <li class="breadcrumb-item active" aria-current="page">Testimonial</li>
                     </ol>
                 </nav>
             </div>
@@ -26,7 +26,7 @@
         <div class="row mb-2">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ url('tour/create') }}" class="btn btn-outline-primary mb-3">Add Data</a>
+                    <a href="{{ url('testimonial/create') }}" class="btn btn-outline-primary mb-3">Add Data</a>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -52,13 +52,37 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Kategori</th>
-                                <th>Paket</th>
+                                <th>Nama</th>
+                                <th>Rating</th>
+                                <th>Image</th>
+                                <th>Review</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
 
+                            @foreach ($data as $row)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $row->name }}</td>
+                                <td>{{ $row->rating }}</td>
+                                <td><img src="{{ asset('storage/images/testimonial/' . $row->img) }}"
+                                    style="width:150px">
+                                </td>
+                                <td>{!! $row->desc !!}</td>
+                                <td>
+                                    <a href="{{ url('testimonial/'.$row->id.'/edit') }}" class="btn btn-outline-warning">
+                                        <i class="badge-circle badge-circle-white text-secondary font-medium-1"
+                                            data-feather="edit"></i>
+                                    </a>
+                                    <button class="btn btn-outline-danger btn-delete"  href="#" onClick="deleteTestimonial(this)" data-id="{{ $row->id }}">
+                                        <i class="badge-circle badge-circle-white text-secondary font-medium-1"
+                                            data-feather="trash-2"></i>
+                                    </button>
+                                </td>
+
+                            </tr>
+                        @endforeach
                      
                         </tbody>
                     </table>
@@ -85,7 +109,7 @@
           })
         }
      
-        function deleteTour(e) {
+        function deleteTestimonial(e) {
           let id = e.getAttribute('data-id');
      
           Swal.fire({
@@ -104,7 +128,7 @@
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 type: 'DELETE',
-                url: '/tour/' + id,
+                url: '/testimonial/' + id,
                 dataType: "json",
                 success: function(response) {
                   Swal.fire({
@@ -112,7 +136,7 @@
                     text: response.message,
                     icon: 'success',
                   }).then((result) => {
-                    window.location.href = '/tour';
+                    window.location.href = '/testimonial';
                   })
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
@@ -124,40 +148,6 @@
         }
     </script>
 
-<script>
-    $(document).ready(function() {
-        $('#table1').DataTable({
-            processing:true,
-            serverside:true,
-            ajax:'{{ url()->current() }}',
-             columns: [
-                {
-              data:'DT_RowIndex',
-              name:'DT_RowIndex'
-            },
-             
-            
-            {
-              data:'category_id',
-              name:'category_id'
-            },
-
-            {
-              data:'name',
-              name:'name'
-            },
-          
-         
-            {
-              data:'button',
-              name:'button'
-            },
-            
-
-             ]
-        });
-    });
-</script>
     @endpush
 
 @endsection
