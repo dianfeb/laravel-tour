@@ -9,7 +9,9 @@ use App\Http\Controllers\admin\ConfigController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\LocationController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\TestimonialController;
 
 /*
@@ -44,11 +46,16 @@ Route::middleware('auth')->group(function() {
     Route::resource('/car', CarController::class);
     Route::resource('/config', ConfigController::class);
     Route::resource('/testimonial', TestimonialController::class);
-});
+    Route::resource('/gallery', GalleryController::class);
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('wisata/{slug}', [HomeController::class, 'category']);
+    Route::get('/page/{id}/edit', [PageController::class, 'edit'])->name('editPage');
+    Route::put('/page/{id}', [PageController::class, 'update'])->name('updatePage');
+    
+    });
 
-Auth::routes();
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('wisata/{slug}', [HomeController::class, 'category']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Auth::routes();
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

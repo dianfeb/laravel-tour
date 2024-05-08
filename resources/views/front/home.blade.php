@@ -468,8 +468,7 @@
             </div>
             <div class="row align-items-center wow fadeInUp">
                 <div class="col-lg-6 mb-30"><img class="light-mode"
-                        src="assets/imgs/page/homepage7/img-testimonial.png" alt="Travila"><img class="dark-mode"
-                        src="assets/imgs/page/homepage7/img-testimonial-dark.png" alt="Travila"></div>
+                        src="{{ asset('storage/images/page/'. $imgTestimonial->img) }}" alt="Travila"></div>
                 <div class="col-lg-6 mb-30">
                     <div class="box-swiper box-swiper-home7">
                         <div class="swiper-container swiper-group-testimonials-1 swiper-group-journey pb-0">
@@ -531,13 +530,12 @@
     </section>
    
     <section class="section-box box-media background-body">
-        <div class="container-media wow fadeInUp"> <img src="assets/imgs/page/homepage5/media.png" alt="Travila"><img
-                src="assets/imgs/page/homepage5/media2.png" alt="Travila"><img
-                src="assets/imgs/page/homepage5/media3.png" alt="Travila"><img
-                src="assets/imgs/page/homepage5/media4.png" alt="Travila"><img
-                src="assets/imgs/page/homepage5/media5.png" alt="Travila"><img
-                src="assets/imgs/page/homepage5/media6.png" alt="Travila"><img
-                src="assets/imgs/page/homepage5/media7.png" alt="Travila"></div>
+        <div class="container-media wow fadeInUp">
+            @foreach ($gallery as $item)
+                
+            <img src="{{ asset('storage/images/gallery/'. $item->img) }}" alt="Travila">
+            @endforeach
+        </div>
     </section>
 
 @endsection

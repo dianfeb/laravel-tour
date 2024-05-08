@@ -47,12 +47,31 @@
                 </a>
             </li>
 
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i data-feather="book" width="20"></i>
+                    <span>Paket Wisata</span>
+                </a>
+
+                <ul class="submenu ">
+                    <li>
+                        <a href="{{ url('/page/1/edit') }}">Image</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/testimonial') }}">Testimonial</a>
+                    </li>
+                    
+                </ul>
+            </li>
+
             <li class="sidebar-item ">
-                <a href="{{ url('/testimonial') }}" class='sidebar-link'>
+                <a href="{{ url('/gallery') }}" class='sidebar-link'>
                     <i data-feather="home" width="20"></i>
-                    <span>Testimonial</span>
+                    <span>Gallery</span>
                 </a>
             </li>
+
+            
 
             <li class="sidebar-item ">
                 <a href="{{ url('/article') }}" class='sidebar-link'>

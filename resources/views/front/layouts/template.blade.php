@@ -34,14 +34,14 @@
       <div class="container">
         <div class="footer-top">
           <div class="row align-items-center"> 
-            <div class="col-md-4 text-center text-md-start"><a class='d-inline-block' href='/'><img alt="Travila" src="assets/imgs/template/logo-footer.svg"></a></div>
+            <div class="col-md-4 text-center text-md-start"><a class='d-inline-block' href='/'><img alt="Travila" src="{{ asset('storage/images/config/' . $config['LogoFooter']) }}"></a></div>
             <div class="col-md-8 text-center text-md-end">
               <div class="d-flex align-items-center justify-content-center justify-content-md-end"><a class="text-md-medium need-help" href="tel:1-800-222-8888">Need help? Call us</a><a class="heading-6 phone-support" href="tel:1-800-222-8888">1-800-222-8888</a></div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 col-sm-12 footer-1">  
+          <div class="col-md-6 col-sm-12 ">  
             <h6>Contact Us </h6>
             <div class="mt-20 mb-20">
               <div class="box-info-contact">
@@ -65,7 +65,7 @@
                   </svg></a></div>
             </div>
           </div>
-          <div class="col-md-2 col-xs-6 footer-2">
+          <div class="col-md-3 col-sm-12 ">
             <h6 class="text-linear-3">Support</h6>
             <ul class="menu-footer">
               <li><a href="#">Forum support</a></li>
@@ -77,7 +77,7 @@
               <li><a href="#">Charges logs</a></li>
             </ul>
           </div>
-          <div class="col-md-2 col-xs-6 footer-3">
+          <div class="col-md-3 col-sm-12">
             <h6 class="text-linear-3">Company</h6>
             <ul class="menu-footer">
               <li><a href="#">About Us</a></li>
@@ -88,41 +88,15 @@
               <li><a href="#">Agencies</a></li>
             </ul>
           </div>
-          <div class="col-md-2 col-xs-6 footer-4">
-            <h6 class="text-linear-3">Services</h6>
-            <ul class="menu-footer">
-              <li><a href="#">Tour Guide</a></li>
-              <li><a href="#">Tour Booking</a></li>
-              <li><a href="#">Hotel Booking</a></li>
-              <li><a href="#">Ticket Booking</a></li>
-              <li><a href="#">Rental Services</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 col-xs-6 footer-5">
-            <h6 class="text-linear-3">Legal</h6>
-            <ul class="menu-footer">
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cookies Policy</a></li>
-              <li><a href="#">Data Processing</a></li>
-              <li><a href="#">Data Policy</a></li>
-              <li><a href="#">Refund Policy</a></li>
-            </ul>
-          </div>
+          
+          
         </div>
         <div class="footer-bottom mt-50">
           <div class="row">
-            <div class="col-md-6 text-md-start text-center mb-20">
-              <p class="text-sm color-white">© 2024 Travila Inc. All rights reserved.</p>
+            <div class="col-md-12 text-center mb-20">
+              <p class="text-sm color-white">© 2024 {{ $config['Title'] }}. All rights reserved.</p>
             </div>
-            <div class="col-md-6 text-md-end text-center mb-20">
-              <ul class="menu-bottom-footer">
-                <li> <a href='/term'>Terms</a></li>
-                <li> <a href="#">Privacy policy</a></li>
-                <li><a href="#">Legal notice</a></li>
-                <li><a href="#">Accessibility</a></li>
-              </ul>
-            </div>
+         
           </div>
         </div>
       </div>
@@ -131,10 +105,10 @@
     <div class="popup-signin"> 
       <div class="popup-container"> 
         <div class="popup-content"> <a class="close-popup-signin"></a>
-          <div class="d-flex gap-2 align-items-center"><a href="#"><img src="assets/imgs/template/popup/logo.svg" alt="Travila"></a>
-            <h4 class="neutral-1000">Hello there !</h4>
+          <div class="d-flex gap-2 align-items-center"><a href="#"><img src="{{ asset('storage/images/config/' . $config['Logo']) }}" alt="Travila" style="width:100px"></a>
+            <h4 class="neutral-1000">| Login</h4>
           </div>
-          <div class="box-button-logins"> <a class="btn btn-login btn-google mr-10" href="#"><img src="assets/imgs/template/popup/google.svg" alt="Travila"><span class="text-sm-bold">Sign in with Google</span></a><a class="btn btn-login mr-10" href="#"><img src="assets/imgs/template/popup/facebook.svg" alt="Travila"></a><a class="btn btn-login" href="#"><img src="assets/imgs/template/popup/apple.svg" alt="Travila"></a></div>
+
           <div class="form-login"> 
             <form action="#">
               <div class="form-group"> 
@@ -168,10 +142,9 @@
     <div class="popup-signup"> 
       <div class="popup-container"> 
         <div class="popup-content"> <a class="close-popup-signup"></a>
-          <div class="d-flex gap-2 align-items-center"><a href="#"><img src="assets/imgs/template/popup/logo.svg" alt="Travila"></a>
-            <h4 class="neutral-1000">Register</h4>
+          <div class="d-flex gap-2 align-items-center"><a href="#"><img src="{{ asset('storage/images/config/' . $config['Logo']) }}" alt="Travila" style="width:100px"></a>
+            <h4 class="neutral-1000">| Register</h4>
           </div>
-          <div class="box-button-logins"> <a class="btn btn-login btn-google mr-10" href="#"><img src="assets/imgs/template/popup/google.svg" alt="Travila"><span class="text-sm-bold">Sign up with Google</span></a><a class="btn btn-login mr-10" href="#"><img src="assets/imgs/template/popup/facebook.svg" alt="Travila"></a><a class="btn btn-login" href="#"><img src="assets/imgs/template/popup/apple.svg" alt="Travila"></a></div>
           <div class="form-login"> 
             <form action="#">
               <div class="form-group"> 
