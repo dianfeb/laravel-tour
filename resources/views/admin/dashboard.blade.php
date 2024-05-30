@@ -1,5 +1,5 @@
 @extends('admin.layouts.template');
-@section('title', 'Dashboard Admin')
+@section('title', 'Dashboard | Laravel Tour')
     
 
 @section('content')

@@ -52,7 +52,7 @@ class GalleryController extends Controller
 
         $data = $request->validate([
             'name' => 'required',
-            'img'  => 'required|image|file|mimes:jpg,jpeg,png,webp|max:2048'
+            'img'  => 'nullable|image|file|mimes:jpg,jpeg,png,webp|max:2048'
         ]);
 
         if ($file = $request->file('img')) {

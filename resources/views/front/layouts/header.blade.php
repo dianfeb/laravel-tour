@@ -38,7 +38,7 @@
                             <li><a class='active' href='/'>Home</a>
                             </li>
 
-                            <li><a href='/contact'>Tentang Kami</a></li>
+                            <li><a href='/about'>Tentang Kami</a></li>
                             <li class=" has-children"><a>Destinations</a>
                                 <ul class="sub-menu">
                                     @foreach ($categories as $item)
@@ -50,15 +50,7 @@
                             <li><a href='/contact'>Galeri</a></li>
 
 
-                            <li><a href='/blog-grid'>Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href='/blog-grid'>Grid Full</a></li>
-                                    <li><a href='/blog-grid-2'>Grid Sidebar</a></li>
-                                    <li><a href='/blog-grid-3'>List</a></li>
-                                    <li><a href='/blog-detail'>Blog Details</a></li>
-                                    <li><a href='/blog-detail-2'>Blog Details 2</a></li>
-                                </ul>
-                            </li>
+                            <li><a href='/blog'>Blog</a></li>
                             <li><a href='/contact'>Contact</a></li>
                         </ul>
                     </nav>
@@ -108,7 +100,7 @@
                                 </ul>
                             </li>
                             <li><a href='/contact'>Gallery</a></li>
-                            <li><a href='/contact'>Blog</a></li>
+                            <li><a href='/blog'>Blog</a></li>
                             <li><a href='/contact'>Contact</a></li>
                         </ul>
                     </nav>

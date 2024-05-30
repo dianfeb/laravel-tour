@@ -64,6 +64,8 @@
                 </ul>
             </li>
 
+            
+
             <li class="sidebar-item ">
                 <a href="{{ url('/gallery') }}" class='sidebar-link'>
                     <i data-feather="home" width="20"></i>
@@ -71,6 +73,12 @@
                 </a>
             </li>
 
+            <li class="sidebar-item ">
+                <a href="{{ url('/choose') }}" class='sidebar-link'>
+                    <i data-feather="home" width="20"></i>
+                    <span>Why Choose Us</span>
+                </a>
+            </li>
             
 
             <li class="sidebar-item ">

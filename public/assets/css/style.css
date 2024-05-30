@@ -11924,6 +11924,10 @@ a.link-black:hover svg {
   margin-bottom: 16px;
 }
 
+.about-section {
+  padding: 91px 0px 110px 0px;
+}
+
 .box-leave-comment {
   padding: 32px;
   border: 1px solid var(--bs-border-color);
@@ -11985,31 +11989,11 @@ a.link-black:hover svg {
   display: inline-block;
 }
 
-.box-about-video {
-  position: relative;
-}
-.box-about-video::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  height: 200px;
-  background-color: var(--bs-background-5);
-  z-index: 1;
-}
-.box-about-video .container {
-  position: relative;
-  z-index: 2;
-}
-
 .bdrd-16 {
   border-radius: 16px;
 }
 
-.box-about-1 {
-  padding: 63px 0px 91px 0px;
-}
+
 
 .box-why-book-travila-5 {
   padding: 90px 0px;

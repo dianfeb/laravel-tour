@@ -80,7 +80,26 @@
                                 
                             @endif
 
-                         
+                            @if ($config['type'] == 'images&desc')
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>File upload (Max 2Mb)</label>
+                                    <div class="form-file">
+                                        <img src="{{asset('storage/images/config/'. $config->img)}}" alt="" width="100px"><br>
+                                            <small>Gambar Lama </small><br>
+                                        <input type="file" name="img" class="form-control form-file-input"
+                                            id="customFile" >
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="basicInput">Description</label>
+                                    <textarea id="ckeditor" name="value" rows="10">{{ old('value', $config->value)  }}</textarea>
+                                </div>
+                            </div>
+                            @endif
 
 
                           

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
+use Carbon\Carbon;
 use App\Models\Car;
 use App\Models\Page;
 use App\Models\Tour;
+use App\Models\Config;
 use App\Models\Slider;
 use App\Models\Article;
 use App\Models\Gallery;
@@ -46,5 +48,21 @@ class HomeController extends Controller
             $category = $slugCategory;
         return view('front.wisata', compact('data', 'categories', 'category'));
     }
+
+    public function Blog() {
+        $carbonNow = Carbon::now();
+        $data = Article::latest()->get() ->map(function ($data) use ($carbonNow) {
+            // Memformat created_at menggunakan $carbonNow
+            $data->formatted_created_at = $carbonNow->parse($data->created_at)->format('d, M Y');
+            return $data;
+        });
+        return view('front.blog', compact('data'));
+    }
+
+    public function About() {
+        $data = Config::find(5);
+        return view('front.about', compact('data'));
+    }
+
 
 }

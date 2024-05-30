@@ -78,7 +78,7 @@
 
     <script src="{{ asset('admin/js/main.js') }}"></script>
     <!-- Code injected by live-server -->
-    {{-- <script>
+   <script>
         // <![CDATA[  <-- For SVG support
         if ('WebSocket' in window) {
             (function() {
@@ -115,7 +115,7 @@
             console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
         }
         // ]]>
-    </script> --}}
+    </script> 
 </body>
 
 </html>
